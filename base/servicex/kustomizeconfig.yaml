@@ -5,6 +5,7 @@ metadata:
   namespace: sthapa
 spec:
   interval: 5m
+  serviceAccountName: flux-testing
   chart:
     spec:
       chart: servicex
