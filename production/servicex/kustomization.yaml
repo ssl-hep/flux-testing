@@ -5,4 +5,17 @@ bases:
 
 resources:
   - servicex-values.yaml
+  - postgresql-secret.yaml
+  - rabbitmq-secret.yaml
+  - minio-secret.yaml
 
+patchesStrategicMerge: 
+  - servicex-secret.yaml
+
+secretGenerator:
+  - name: servicex-postgresql-secret
+    type: Opaque
+  - name: servicex-rabbitmq-secret
+    type: Opaque
+  - name: servicex-minio-secret
+    type: Opaque

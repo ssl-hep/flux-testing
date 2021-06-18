@@ -127,7 +127,7 @@ spec:
       persistence:
         enabled: false
       auth:
-        password: leftfoot1
+        existingPasswordSecret: servicex-rabbitmq-secret
       # This is needed for Windows users
       volumePermissions:
           enabled: true
@@ -136,7 +136,7 @@ spec:
     # Values for the Postgresql Chart
     postgresql:
       postgresqlDatabase: servicex
-      postgresqlPassword: testpass
+      existingSecret: servicex-postgresql-secret-d247bb8h49
       persistence:
         enabled: false
 
@@ -146,8 +146,7 @@ spec:
       # For easy testing we don't require PVs for minio
       persistence:
         enabled: false
-      accessKey: miniouser
-      secretKey: testpass
+      existingSecret: servicex-minio-secret
 
 
 
