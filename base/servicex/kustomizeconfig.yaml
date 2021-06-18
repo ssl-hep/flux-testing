@@ -19,18 +19,26 @@ spec:
     replicaCount: 1
   valuesFrom:
     - kind: Secret
+      metadata:
+        namespace: sthapa
       name: servicex-postgresql-secret-d247bb8h49
       key: postgresql-postgres-password
       targetPath: app.postgresql_password
     - kind: Secret
+      metadata:
+        namespace: sthapa
       name: servicex-rabbitmq-secret-c8658ct6mh
       key: rabbitmq-password
       targetPath: app.rabbitmq_password
     - kind: Secret
+      metadata:
+        namespace: sthapa
       name: servicex-minio-secret-f9fg522d54
       key: accesskey
       targetPath: app.minio_accesskey
     - kind: Secret
+      metadata:
+        namespace: sthapa
       name: servicex-minio-secret-f9fg522d54
       key: secretkey
       targetPath: app.minio_secretkey
