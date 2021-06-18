@@ -28,6 +28,12 @@ spec:
       metadata:
         namespace: sthapa
       name: servicex-rabbitmq-secret-c8658ct6mh
+      key: rabbitmq-erlang-cookie
+      targetPath: app.rabbitmq_erlang_cookie
+    - kind: Secret
+      metadata:
+        namespace: sthapa
+      name: servicex-rabbitmq-secret-c8658ct6mh
       key: rabbitmq-password
       targetPath: app.rabbitmq_password
     - kind: Secret
