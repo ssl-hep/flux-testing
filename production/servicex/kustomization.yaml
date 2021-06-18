@@ -9,9 +9,6 @@ resources:
   - rabbitmq-secret.yaml
   - minio-secret.yaml
 
-patchesStrategicMerge: 
-  - servicex-secret.yaml
-
 secretGenerator:
   - name: servicex-postgresql-secret
     type: Opaque
