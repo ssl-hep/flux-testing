@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
   name: servicex
@@ -7,22 +7,5 @@ metadata:
 spec:
   interval: 30s
   url: https://ssl-hep.github.io/ssl-helm-charts/
-  valuesFrom:
-    - kind: Secret
-      name: servicex-postgresql-secret-d247bb8h49
-      key: postgresql-postgres-password
-      targetPath: app.postgresql_password
-    - kind: Secret
-      name: servicex-rabbitmq-secret-c8658ct6mh
-      key: rabbitmq-password
-      targetPath: app.rabbitmq_password
-    - kind: Secret
-      name: servicex-minio-secret-f9fg522d54
-      key: accesskey
-      targetPath: app.minio_accesskey
-    - kind: Secret
-      name: servicex-minio-secret-f9fg522d54
-      key: secretkey
-      targetPath: app.minio_secretkey
 
     
