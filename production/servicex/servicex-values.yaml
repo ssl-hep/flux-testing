@@ -128,6 +128,7 @@ spec:
         enabled: false
       auth:
         existingPasswordSecret: servicex-rabbitmq-secret
+        existingErlangSecret: servicex-rabbitmq-secret
       # This is needed for Windows users
       volumePermissions:
           enabled: true
