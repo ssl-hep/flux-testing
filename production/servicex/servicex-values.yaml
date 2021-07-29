@@ -153,6 +153,6 @@ spec:
 
     ###### Settings for Authenticating with the CERN Infrastructure #######
 
-    gridAccount: <your account>
+    gridAccount: iuvokotic
 
     rbacEnabled: True
