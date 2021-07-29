@@ -1,0 +1,29 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - servicex-repository.yaml
+  - servicex-base.yaml
+  - postgresql-secret.yaml
+  - rabbitmq-secret.yaml
+  - minio-secret.yaml
+
+secretGenerator:
+  - name: servicex-postgresql-secret
+    namespace: sthapa
+    type: Opaque
+  - name: servicex-rabbitmq-secret
+    namespace: sthapa
+    type: Opaque
+  - name: servicex-minio-secret
+    namespace: sthapa
+    type: Opaque
+    
+configMapGenerator:
+  - name: servicex-helm-config
+    namespace: sthapa
+    files:
+      - values.yaml
+
+configurations:
+  - kustomizeconfig.yaml
