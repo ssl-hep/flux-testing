@@ -7,5 +7,3 @@ metadata:
 spec:
   interval: 30s
   url: https://ssl-hep.github.io/ssl-helm-charts/
-
-    

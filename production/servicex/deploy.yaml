@@ -1,0 +1,186 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"helm.toolkit.fluxcd.io/v2beta1","kind":"HelmRelease","metadata":{"annotations":{},"labels":{"kustomize.toolkit.fluxcd.io/name":"flux-testing","kustomize.toolkit.fluxcd.io/namespace":"sthapa"},"name":"servicex","namespace":"sthapa"},"spec":{"chart":{"spec":{"chart":"servicex","sourceRef":{"kind":"HelmRepository","name":"servicex"},"version":"1.0.11"}},"interval":"1m","releaseName":"servicex","serviceAccountName":"flux-testing","values":{"app":{"adminEmail":"admin@example.com","auth":false,"authExpires":21600,"globusClientID":null,"globusClientSecret":null,"image":"sslhep/servicex_app","ingress":{"class":"nginx","defaultBackend":"default-http-backend","enabled":false,"host":"servicex.ssl-hep.org","tls":{"clusterIssuer":null,"enabled":false,"secretName":"{{.Release.Name}}-app-tls"}},"mailgunApiKey":null,"mailgunDomain":null,"pullPolicy":"Always","rabbitmq":{"retries":12,"retry_interval":10},"replicas":1,"tag":"develop","tokenExpires":false,"validateTransformerImage":true},"codeGen":{"enabled":true,"image":"sslhep/servicex_code_gen_func_adl_xaod","pullPolicy":"Always","tag":"develop"},"didFinder":{"auth_host":"https://voatlasrucio-auth-prod.cern.ch:443","image":"sslhep/servicex-did-finder","pullPolicy":"Always","rucio_host":"https://voatlasrucio-server-prod.cern.ch:443","site":null,"tag":"develop","threads":5},"gridAccount":"iuvokotic","minio":{"existingSecret":"servicex-minio-secret","persistence":{"enabled":false}},"objectStore":{"enabled":true,"publicURL":null},"postgres":{"enabled":false},"postgresql":{"existingSecret":"servicex-postgresql-secret-d247bb8h49","persistence":{"enabled":false},"postgresqlDatabase":"servicex"},"preflight":{"image":"sslhep/servicex_func_adl_xaod_transformer","pullPolicy":"Always","tag":"develop"},"rabbitmq":{"auth":{"existingErlangSecret":"servicex-rabbitmq-secret","existingPasswordSecret":"servicex-rabbitmq-secret"},"persistence":{"enabled":false},"volumePermissions":{"enabled":true}},"rbacEnabled":true,"transformer":{"autoscaler":{"cpuScaleThreshold":30,"enabled":true,"maxReplicas":20,"minReplicas":1},"cpuLimit":1,"defaultTransformerImage":"sslhep/servicex_func_adl_xaod_transformer:develop","pullPolicy":"Always"},"x509Secrets":{"image":"sslhep/x509-secrets","pullPolicy":"Always","tag":"develop","vomsOrg":"atlas"}}}}
+  creationTimestamp: "2021-07-29T19:07:17Z"
+  finalizers:
+  - finalizers.fluxcd.io
+  generation: 8
+  labels:
+    kustomize.toolkit.fluxcd.io/name: flux-testing
+    kustomize.toolkit.fluxcd.io/namespace: sthapa
+  managedFields:
+  - apiVersion: helm.toolkit.fluxcd.io/v2beta1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:kustomize.toolkit.fluxcd.io/name: {}
+          f:kustomize.toolkit.fluxcd.io/namespace: {}
+      f:spec:
+        .: {}
+        f:chart:
+          .: {}
+          f:spec:
+            .: {}
+            f:chart: {}
+            f:sourceRef:
+              .: {}
+              f:kind: {}
+              f:name: {}
+            f:version: {}
+        f:interval: {}
+        f:releaseName: {}
+        f:serviceAccountName: {}
+        f:values: {}
+    manager: kustomize-controller
+    operation: Update
+    time: "2021-07-29T19:33:35Z"
+  - apiVersion: helm.toolkit.fluxcd.io/v2beta1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .: {}
+          v:"finalizers.fluxcd.io": {}
+      f:status:
+        .: {}
+        f:conditions: {}
+        f:failures: {}
+        f:helmChart: {}
+        f:installFailures: {}
+        f:lastAttemptedRevision: {}
+        f:lastAttemptedValuesChecksum: {}
+        f:lastReleaseRevision: {}
+        f:observedGeneration: {}
+    manager: helm-controller
+    operation: Update
+    time: "2021-07-30T16:44:09Z"
+  name: servicex
+  namespace: sthapa
+  resourceVersion: "185017209"
+  uid: c47f86cc-b3a3-4364-b18a-b7d84f3d4b44
+spec:
+  chart:
+    spec:
+      chart: servicex
+      sourceRef:
+        kind: HelmRepository
+        name: servicex
+      version: 1.0.11
+  interval: 1m
+  releaseName: servicex
+  serviceAccountName: flux-testing
+  values:
+    app:
+      adminEmail: admin@example.com
+      auth: false
+      authExpires: 21600
+      globusClientID: null
+      globusClientSecret: null
+      image: sslhep/servicex_app
+      ingress:
+        class: nginx
+        defaultBackend: default-http-backend
+        enabled: false
+        host: servicex.ssl-hep.org
+        tls:
+          clusterIssuer: null
+          enabled: false
+          secretName: '{{.Release.Name}}-app-tls'
+      mailgunApiKey: null
+      mailgunDomain: null
+      pullPolicy: Always
+      rabbitmq:
+        retries: 12
+        retry_interval: 10
+      replicas: 1
+      tag: develop
+      tokenExpires: false
+      validateTransformerImage: true
+    codeGen:
+      enabled: true
+      image: sslhep/servicex_code_gen_func_adl_xaod
+      pullPolicy: Always
+      tag: develop
+    didFinder:
+      auth_host: https://voatlasrucio-auth-prod.cern.ch:443
+      image: sslhep/servicex-did-finder
+      pullPolicy: Always
+      rucio_host: https://voatlasrucio-server-prod.cern.ch:443
+      site: null
+      tag: develop
+      threads: 5
+    gridAccount: iuvokotic
+    minio:
+      existingSecret: servicex-minio-secret
+      persistence:
+        enabled: false
+    objectStore:
+      enabled: true
+      publicURL: null
+    postgres:
+      enabled: false
+    postgresql:
+      existingSecret: servicex-postgresql-secret-d247bb8h49
+      persistence:
+        enabled: false
+      postgresqlDatabase: servicex
+    preflight:
+      image: sslhep/servicex_func_adl_xaod_transformer
+      pullPolicy: Always
+      tag: develop
+    rabbitmq:
+      auth:
+        existingErlangSecret: servicex-rabbitmq-secret
+        existingPasswordSecret: servicex-rabbitmq-secret
+      persistence:
+        enabled: false
+      volumePermissions:
+        enabled: true
+    rbacEnabled: true
+    transformer:
+      autoscaler:
+        cpuScaleThreshold: 30
+        enabled: true
+        maxReplicas: 20
+        minReplicas: 1
+      cpuLimit: 1
+      defaultTransformerImage: sslhep/servicex_func_adl_xaod_transformer:develop
+      pullPolicy: Always
+    x509Secrets:
+      image: sslhep/x509-secrets
+      pullPolicy: Always
+      tag: develop
+      vomsOrg: atlas
+status:
+  conditions:
+  - lastTransitionTime: "2021-07-30T16:44:09Z"
+    message: 'Helm install failed: YAML parse error on servicex/templates/preflight/deployment.yaml:
+      error converting YAML to JSON: yaml: line 30: mapping values are not allowed
+      in this context'
+    reason: InstallFailed
+    status: "False"
+    type: Ready
+  - lastTransitionTime: "2021-07-30T16:44:09Z"
+    message: |+
+      Helm install failed: YAML parse error on servicex/templates/preflight/deployment.yaml: error converting YAML to JSON: yaml: line 30: mapping values are not allowed in this context
+
+      Last Helm logs:
+
+    reason: InstallFailed
+    status: "False"
+    type: Released
+  failures: 1
+  helmChart: sthapa/sthapa-servicex
+  installFailures: 1
+  lastAttemptedRevision: 1.0.11
+  lastAttemptedValuesChecksum: 8d5e7436710bfa282bdb59b33b2317d4c7dd06a9
+  lastReleaseRevision: 1
+  observedGeneration: 8

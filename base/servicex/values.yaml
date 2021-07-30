@@ -27,8 +27,8 @@ app:
   validateTransformerImage: true
 
   # Globus configuration - obtain these at https://auth.globus.org/v2/web/developers
-  globusClientID: 
-  globusClientSecret: 
+  globusClientID:
+  globusClientSecret:
 
   # Specify an email address for the first admin user
   adminEmail: admin@example.com
@@ -91,7 +91,7 @@ codeGen:
 # Pull policy for the worker pods - the image and version are specified as
 # part of the transform request
 transformer:
-  autoscaler: 
+  autoscaler:
     enabled: true
     cpuScaleThreshold: 30
     minReplicas: 1
@@ -117,7 +117,7 @@ rabbitmq:
     password: leftfoot1
   # This is needed for Windows users
   volumePermissions:
-      enabled: true
+    enabled: true
 
 
 # Values for the Postgresql Chart
@@ -142,4 +142,4 @@ minio:
 
 gridAccount: <your account>
 
-rbacEnabled: True
+rbacEnabled: true

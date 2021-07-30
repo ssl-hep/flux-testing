@@ -1,3 +1,4 @@
+---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
@@ -18,7 +19,7 @@ secretGenerator:
   - name: servicex-minio-secret
     namespace: sthapa
     type: Opaque
-    
+
 configMapGenerator:
   - name: servicex-helm-config
     namespace: sthapa
